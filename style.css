@@ -1,0 +1,47 @@
+/* 🎮 Generel sideopsætning */
+body {
+    margin: 0;
+    overflow: hidden; /* Fjern scrollbars */
+    background-color: #87CEEB; /* Himmelblå baggrund */
+}
+
+/* 🖼️ Spilramme */
+#game-frame {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #4682B4); /* Blå himmel gradient */
+    border: 2px solid #000;
+}
+
+/* 🐦 Fugle */
+.bird {
+    width: 60px;
+    height: 60px;
+    background: url('image/flying.gif') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 50%; /* Start position på y-aksen */
+    left: 10%; /* Start position på x-aksen */
+}
+
+/* Forhindringer */
+.obstacle {
+    width: 80px;
+    height: 300px;
+    background: #8B4513; /* Brun farve til forhindringer (fx træer eller pæle) */
+    position: absolute;
+    bottom: 0;
+    animation: moveObstacle 4s infinite linear;
+}
+
+/* 🎬 Forhindring-animation (bevæger sig fra højre til venstre) */
+@keyframes moveObstacle {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 100vw;
+    }
+}
